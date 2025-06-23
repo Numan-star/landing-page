@@ -24,8 +24,8 @@ export default function Footer() {
             <div>
               <p className="text-sm leading-relaxed max-w-xs">
                 Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s...
+                industry. Lorem Ipsum has been the industry&apos;s standard
+                dummy text ever since the 1500s...
               </p>
               <p className="text-xs mt-4">
                 Khanqatullah (c) {new Date().getFullYear()}

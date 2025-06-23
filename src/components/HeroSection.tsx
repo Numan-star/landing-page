@@ -3,8 +3,6 @@
 import Image from "next/image";
 
 export default function HeroSection() {
-  const imageUrl = "https://randomuser.me/api/portraits/men/75.jpg";
-
   return (
     <section className="relative min-h-[80vh] w-full text-white overflow-hidden">
       <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 h-full w-full">
