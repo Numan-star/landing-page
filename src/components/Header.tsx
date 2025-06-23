@@ -13,15 +13,17 @@ export default function Header() {
 
   return (
     <>
-      <header className="w-full flex items-center justify-between px-4 md:px-10 py-4 bg-black/80 backdrop-blur z-30 sticky top-0">
+      <header className="w-full flex items-center justify-between px-4 md:px-10 py-4 bg-transparent">
         <div className="flex items-center gap-3">
-          <Image
-            src="/images/logo.png"
-            alt="Logo"
-            width={40}
-            height={40}
-            className="h-20 w-30"
-          />
+          <div>
+            <Image
+              src="/images/logo1.jpg"
+              alt="Logo"
+              width={100}
+              height={100}
+              className="h-28 rounded-full"
+            />
+          </div>
           <div>
             <div className="text-sm font-arabic"> خانقةاللّٰہِ</div>
             <div className="font-bold text-lg tracking-wide text-orange-400">

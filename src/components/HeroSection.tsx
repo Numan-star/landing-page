@@ -7,15 +7,6 @@ export default function HeroSection() {
 
   return (
     <section className="relative min-h-[80vh] w-full text-white overflow-hidden">
-      <div className="absolute inset-0 z-0">
-        <img
-          src="/kaaba.jpg"
-          alt="Kaaba"
-          className="w-full h-full object-cover opacity-70"
-        />
-        <div className="absolute inset-0 bg-black bg-opacity-60" />
-      </div>
-
       <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 h-full w-full">
         <div className="hidden md:flex items-center justify-center"></div>
         <div className="flex items-center justify-center px-6 py-10">
@@ -39,29 +30,29 @@ export default function HeroSection() {
               whoever fulfils their pledge to Allah, He will grant them a great
               reward.
             </p>
-            <p className="mt-4 text-orange-400 font-semibold">
-              — Al-Fatah 48:10
-            </p>
+            <p className="mt-4 text-white font-semibold">— Al-Fatah 48:10</p>
           </div>
         </div>
         <div className="hidden md:flex items-center justify-center"></div>
       </div>
 
-      <div className="absolute bottom-4 right-4 z-10 flex items-center gap-3 bg-white/10 backdrop-blur px-4 py-2 rounded-lg shadow-lg">
-        <div className="flex items-center justify-center bg-red-600 text-white text-xs font-bold animate-pulse rounded-full w-9 h-9">
+      <div className="absolute bottom-4 right-4 z-10 flex items-center justify-end gap-3 px-16">
+        <div className="flex items-center justify-center bg-red-600 text-white text-xs font-normal animate-pulse rounded-full w-9 h-9">
           LIVE
         </div>
         <div className="text-sm">
-          <span className="font-semibold">Dr. Naushad Shaikh</span>
+          <span className=" font-medium">Dr. Naushad Shaikh</span>
           <br />
-          <span className="text-xs text-gray-200">going Live in 72 hrs</span>
+          <span className="text-xs text-gray-200 font-semibold">
+            going Live in 72 hrs
+          </span>
         </div>
         <Image
-          src={imageUrl || "/user.jpg"}
+          src={"/images/scholar.jpg"}
           alt="User"
-          width={36}
-          height={36}
-          className="h-10 w-10 rounded-full  object-cover"
+          width={100}
+          height={100}
+          className=" h-48 w-28  object-cover"
         />
       </div>
     </section>

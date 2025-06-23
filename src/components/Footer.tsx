@@ -1,68 +1,82 @@
 "use client";
 
+import Image from "next/image";
+import { FaFacebookF, FaYoutube } from "react-icons/fa";
+
 export default function Footer() {
   return (
-    <footer className="bg-black border-t border-gray-800 py-8 px-4 md:px-10 text-gray-400">
-      <div className="flex flex-col md:flex-row justify-between items-center md:items-start gap-8 max-w-6xl mx-auto">
-        <div className="flex items-center gap-3">
-          <img src="/logo.png" alt="Logo" className="h-10 w-10" />
-          <div>
-            <div className="font-bold text-lg text-orange-400">
-              KHANQATULLAH
-            </div>
-            <div className="text-xs mt-1">
-              A platform for authentic Islamic learning and spiritual growth.
+    <footer className="bg-black text-gray-300 px-4 sm:px-8 md:px-16 lg:px-20 py-10">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-10">
+        {/* Left: Logo and Description */}
+        <div className="flex flex-col items-center md:items-start text-center md:text-left md:w-1/2 gap-4">
+          <div className="flex items-center gap-2">
+            <span className="text-white font-bold text-lg">KHANQATULLAH</span>
+            <span className="text-sm text-white">خانقاهُ الله</span>
+          </div>
+          <div className="flex flex-col sm:flex-row items-center sm:items-start gap-5">
+            <Image
+              src="/images/logo1.jpg"
+              alt="Logo"
+              width={100}
+              height={100}
+              className="h-28 w-28 object-cover rounded-full"
+            />
+            <div>
+              <p className="text-sm leading-relaxed max-w-xs">
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy
+                text ever since the 1500s...
+              </p>
+              <p className="text-xs mt-4">
+                Khanqatullah (c) {new Date().getFullYear()}
+              </p>
             </div>
           </div>
         </div>
-        <div className="flex flex-col md:flex-row gap-8">
-          <div>
-            <div className="font-semibold mb-2 text-white">Menu</div>
-            <ul className="space-y-1">
-              <li>
-                <a href="#" className="hover:text-orange-400">
-                  Lectures
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-orange-400">
-                  Wazaif
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-orange-400">
-                  Resources
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-orange-400">
-                  Streaming
-                </a>
-              </li>
-            </ul>
+
+        {/* Center: Links */}
+        <div className="text-sm flex flex-col items-center md:items-start gap-2">
+          <a href="#" className="hover:text-white">
+            Home
+          </a>
+          <a href="#" className="hover:text-white">
+            About Us
+          </a>
+          <a href="#" className="hover:text-white">
+            Lectures
+          </a>
+          <a href="#" className="hover:text-white">
+            Live Streaming
+          </a>
+          <a href="#" className="hover:text-white">
+            Privacy Policy
+          </a>
+          <a href="#" className="hover:text-white">
+            Terms & Conditions
+          </a>
+        </div>
+
+        {/* Right: Contact */}
+        <div className="flex flex-col items-center md:items-start gap-4">
+          <div className="text-center md:text-left">
+            <h3 className="font-semibold text-white mb-1">Contact Us</h3>
+            <p className="text-sm">info@khanqatullah.com</p>
           </div>
-          <div>
-            <div className="font-semibold mb-2 text-white">Contact</div>
-            <div>
-              Email:{" "}
-              <a
-                href="mailto:info@khanqatullah.com"
-                className="hover:text-orange-400"
-              >
-                info@khanqatullah.com
-              </a>
-            </div>
-            <div>
-              WhatsApp:{" "}
-              <a href="#" className="hover:text-orange-400">
-                +92-300-0000000
-              </a>
-            </div>
+          <div className="flex gap-4">
+            <a
+              href="#"
+              className="bg-gray-700 hover:bg-gray-600 p-2 rounded-lg text-gray-400"
+            >
+              <FaFacebookF />
+            </a>
+            <a
+              href="#"
+              className="bg-gray-700 hover:bg-gray-600 p-2 rounded-lg text-gray-400"
+            >
+              <FaYoutube />
+            </a>
           </div>
         </div>
-      </div>
-      <div className="text-center text-xs text-gray-600 mt-8">
-        &copy; {new Date().getFullYear()} KHANQATULLAH. All rights reserved.
       </div>
     </footer>
   );

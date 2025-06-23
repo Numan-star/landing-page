@@ -1,54 +1,122 @@
 "use client";
 
-const videos = [
+import { Play, Pause, Download, Heart, Rss } from "lucide-react";
+import Image from "next/image";
+
+const lectures = [
   {
-    id: 1,
-    title: "Understanding Tawheed",
-    thumbnail: "/video/thumb1.jpg",
-    duration: "18:30",
+    number: 1,
+    titleAr: "محبت رسول ﷺ",
+    titleEn: "Love for the Prophet ﷺ",
+    date: "10 June, 2024",
+    duration: "23m",
+    audio: "/audio/lecture1.mp3",
   },
   {
-    id: 2,
-    title: "The Power of Dua",
-    thumbnail: "/video/thumb2.jpg",
-    duration: "22:10",
+    number: 2,
+    titleAr: "نماز کی اہمیت",
+    titleEn: "Importance of Salah",
+    date: "12 June, 2024",
+    duration: "19m",
+    audio: "/audio/lecture2.mp3",
+  },
+  {
+    number: 3,
+    titleAr: "اخلاق اسلامی",
+    titleEn: "Islamic Ethics",
+    date: "15 June, 2024",
+    duration: "21m",
+    audio: "/audio/lecture3.mp3",
+  },
+  {
+    number: 4,
+    titleAr: "قرآن کا پیغام",
+    titleEn: "Message of the Quran",
+    date: "18 June, 2024",
+    duration: "25m",
+    audio: "/audio/lecture4.mp3",
   },
 ];
 
-export default function VideoLectures() {
+export default function AudioLectures() {
   return (
-    <section className="py-12 px-4 md:px-10 bg-black">
-      <h2 className="text-2xl md:text-3xl font-bold mb-6 text-orange-400">
-        Video Lectures
-      </h2>
-      <div className="grid md:grid-cols-2 gap-8">
-        {videos.map((video) => (
-          <div
-            key={video.id}
-            className="bg-white/5 rounded-lg shadow-lg overflow-hidden"
-          >
-            <div className="relative">
-              <img
-                src={video.thumbnail}
-                alt={video.title}
-                className="w-full h-48 object-cover"
-              />
-              <button className="absolute inset-0 flex items-center justify-center">
-                <span className="bg-orange-400 rounded-full p-3 shadow-lg">
-                  <svg width="28" height="28" fill="white" viewBox="0 0 24 24">
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
-                </span>
-              </button>
-              <span className="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded">
-                {video.duration}
-              </span>
-            </div>
-            <div className="p-4">
-              <div className="font-semibold">{video.title}</div>
+    <section className="py-20 px-4 md:px-16 bg-gray-100 text-black">
+      <div className="flex justify-between items-center mb-6 flex-wrap gap-2">
+        <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
+          Video Lectures
+        </h2>
+        <a
+          href="#"
+          className="text-sm md:text-base text-gray-400 hover:text-gray-700"
+        >
+          View All
+        </a>
+      </div>
+
+      <div className="flex flex-col lg:flex-row gap-8 items-start">
+        {/* Featured Audio Card */}
+        <div className="relative rounded-2xl overflow-hidden w-full lg:w-1/2 h-[300px] shadow-lg">
+          {/* Background Image */}
+          <Image
+            src="/images/quran1.jpg"
+            alt="Quran Background"
+            layout="fill"
+            objectFit="cover"
+            className="z-0"
+          />
+
+          {/* Overlay */}
+          <div className="absolute inset-0 bg-black/50 z-10 flex flex-col justify-end p-5 text-white items-center">
+            <div className="w-full">
+              <div className="text-lg sm:text-xl font-semibold mb-2">
+                The Quran from a Literary Practice
+              </div>
+
+              <div className="flex flex-col gap-2">
+                <input
+                  type="range"
+                  min="0"
+                  max="100"
+                  defaultValue={40}
+                  className="w-full accent-white"
+                />
+                <div className="flex justify-between text-xs text-gray-200">
+                  <span>1:03</span>
+                  <span>2:18</span>
+                </div>
+                <div className="flex justify-center gap-5 mt-2 flex-wrap">
+                  <Pause className="w-5 h-5" />
+                  <Play className="w-5 h-5" />
+                  <Download className="w-5 h-5" />
+                  <Heart className="w-5 h-5" />
+                  <Rss className="w-5 h-5" />
+                </div>
+              </div>
+
+              <div className="text-xs text-gray-300 mt-2">7 May, 2025</div>
             </div>
           </div>
-        ))}
+        </div>
+
+        {/* Lecture List */}
+        <div className="space-y-6 w-full lg:w-1/2">
+          {lectures.map((lec) => (
+            <div key={lec.number} className="flex gap-3 sm:gap-4 items-center">
+              <div className="bg-gray-100 text-gray-500 rounded-xl w-10 h-10 flex items-center justify-center text-sm font-bold">
+                {lec.number.toString().padStart(2, "0")}
+              </div>
+              <div className="flex-1">
+                <div className="font-semibold text-gray-700 text-sm sm:text-base">
+                  {lec.titleEn}
+                </div>
+                <div className="text-xs text-gray-500">{lec.date}</div>
+              </div>
+              <div className="text-xs sm:text-sm text-gray-500">
+                {lec.duration}
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
