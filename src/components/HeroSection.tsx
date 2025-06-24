@@ -9,7 +9,7 @@ export default function HeroSection() {
         <div className="hidden md:flex items-center justify-center"></div>
         <div className="flex items-center justify-center px-2 md:px-6 py-2 md:py-8">
           <p
-            className="text-2xl md:text-5xl font-arabic font-bold text-right leading-loose max-w-lg md:max-w-xl"
+            className="text-2xl md:text-5xl font-arabic font-bold text-right leading-loose max-w-lg"
             dir="rtl"
           >
             إِنَّ ٱلَّذِينَ يُبَايِعُونَكَ إِنَّمَا يُبَايِعُونَ ٱللَّهَ ۚ يَدُ
@@ -20,7 +20,7 @@ export default function HeroSection() {
         </div>
 
         <div className="flex items-center justify-center px-2 md:px-6 py-2 md:py-7">
-          <div className="max-w-lg md:max-w-xl text-left">
+          <div className="max-w-lg text-left">
             <p className="text-base md:text-lg text-gray-200 leading-relaxed">
               Surely those who pledge allegiance to you ˹O Prophet˺ are actually
               pledging allegiance to Allah. Allah’s Hand is over theirs. Whoever
@@ -33,7 +33,7 @@ export default function HeroSection() {
         </div>
       </div>
 
-      <div className="absolute bottom-0 right-4 z-10 flex items-center justify-end px-10 md:px-16">
+      <div className="mb-5 md:mb-0 md:absolute bottom-0 right-4 z-10 flex items-center justify-end px-10 md:px-16">
         <div className="flex items-end md:items-center flex-col md:flex-row gap-2">
           <div className="animate-pulse">
             <Image

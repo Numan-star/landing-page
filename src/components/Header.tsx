@@ -97,14 +97,25 @@ export default function Header() {
         style={{ transitionProperty: "opacity, transform" }}
       >
         <div className="w-full flex justify-between items-center px-5 py-3">
-          <div>
-            <Image
-              src="/images/footerLogo.png"
-              alt="Logo"
-              width={100}
-              height={100}
-              className=" w-56 h-36"
-            />
+          <div className="flex items-start gap-3">
+            <div>
+              <Image
+                src="/images/logoImage.png"
+                alt="Logo"
+                width={100}
+                height={100}
+                className="md:h-32 md:w-20 h-20 w-14 rounded-full"
+              />
+            </div>
+            <div>
+              <div className="text-xs md:text-lg font-arabic">
+                {" "}
+                خانقةاللّٰہِ
+              </div>
+              <div className="font-bold text-sm md:text-xl tracking-wide text-white">
+                KHANQATULLAH
+              </div>
+            </div>
           </div>
           <div>
             <button
