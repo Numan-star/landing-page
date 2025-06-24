@@ -19,12 +19,12 @@ export default function Header() {
               alt="Logo"
               width={100}
               height={100}
-              className="rounded-full"
+              className="md:h-32 md:w-20 h-20 w-14 rounded-full"
             />
           </div>
           <div>
-            <div className="text-xl font-arabic"> خانقةاللّٰہِ</div>
-            <div className="font-bold text-lg tracking-wide text-white">
+            <div className="text-xs md:text-lg font-arabic"> خانقةاللّٰہِ</div>
+            <div className="font-bold text-sm md:text-xl tracking-wide text-white">
               KHANQATULLAH
             </div>
           </div>
