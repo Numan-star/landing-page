@@ -54,19 +54,16 @@ export default function AudioLectures() {
       </div>
 
       <div className="flex flex-col lg:flex-row gap-8 items-start">
-        {/* Featured Audio Card */}
         <div className="relative rounded-2xl overflow-hidden w-full lg:w-1/2 h-[300px] shadow-lg">
-          {/* Background Image */}
           <Image
-            src="/images/quran1.jpg"
+            src="/images/audioBgImage.png"
             alt="Quran Background"
             layout="fill"
             objectFit="cover"
             className="z-0"
           />
 
-          {/* Overlay */}
-          <div className="absolute inset-0 bg-black/50 z-10 flex flex-col justify-end p-5 text-white items-center">
+          <div className="absolute inset-0 bg-black/10 z-10 flex flex-col justify-end p-5 text-white items-center">
             <div className="w-full">
               <div className="text-lg sm:text-xl font-semibold mb-2">
                 The Quran from a Literary Practice
@@ -78,9 +75,9 @@ export default function AudioLectures() {
                   min="0"
                   max="100"
                   defaultValue={40}
-                  className="w-full accent-white"
+                  className="w-full accent-gray-500"
                 />
-                <div className="flex justify-between text-xs text-gray-200">
+                <div className="flex justify-between text-xs text-white">
                   <span>1:03</span>
                   <span>2:18</span>
                 </div>
@@ -93,12 +90,11 @@ export default function AudioLectures() {
                 </div>
               </div>
 
-              <div className="text-xs text-gray-300 mt-2">7 May, 2025</div>
+              {/* <div className="text-xs text-gray-300 mt-2">7 May, 2025</div> */}
             </div>
           </div>
         </div>
 
-        {/* Lecture List */}
         <div className="space-y-6 w-full lg:w-1/2">
           {lectures.map((lec) => (
             <div key={lec.number} className="flex gap-3 sm:gap-4 items-center">

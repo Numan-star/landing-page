@@ -31,26 +31,34 @@ export default function HeroSection() {
             <p className="mt-4 text-white font-semibold">— Al-Fatah 48:10</p>
           </div>
         </div>
-        <div className="hidden md:flex items-center justify-center"></div>
       </div>
 
-      <div className="absolute bottom-4 right-4 z-10 flex items-center justify-end gap-3 px-16">
-        <div className="flex items-center justify-center bg-red-600 text-white text-xs font-normal animate-pulse rounded-full w-9 h-9">
-          LIVE
+      <div className="absolute bottom-0 right-4 z-10 flex items-center justify-end sm:px-16">
+        <div className="flex items-center gap-2">
+          <div className="animate-pulse">
+            <Image
+              src="/images/liveImage.png"
+              alt="Logo"
+              width={100}
+              height={100}
+              className="h-13 w-13"
+            />
+          </div>
+          <div className="text-sm">
+            <span className=" font-medium">Dr. Naushad Shaikh</span>
+            <br />
+            <span className="text-xs text-gray-200 font-semibold">
+              going Live in 72 hrs
+            </span>
+          </div>
         </div>
-        <div className="text-sm">
-          <span className=" font-medium">Dr. Naushad Shaikh</span>
-          <br />
-          <span className="text-xs text-gray-200 font-semibold">
-            going Live in 72 hrs
-          </span>
-        </div>
+
         <Image
-          src={"/images/scholar.jpg"}
+          src={"/images/muftiSahabImage.png"}
           alt="User"
           width={100}
           height={100}
-          className=" h-48 w-28  object-cover"
+          className="h-32 w-40"
         />
       </div>
     </section>

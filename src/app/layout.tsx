@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-// Load fonts
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -13,7 +12,6 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// Metadata
 export const metadata: Metadata = {
   title: {
     default: "Mufti Audio Lectures & Wazaif",
@@ -32,7 +30,7 @@ export const metadata: Metadata = {
     "Hisbulbahar",
     "Islamic spirituality",
   ],
-  metadataBase: new URL("https://khanqatullah.vercel.app/"), // Replace with your domain
+  metadataBase: new URL("https://khanqatullah.vercel.app/"),
   openGraph: {
     title: "Mufti Audio Lectures & Wazaif",
     description:
@@ -41,7 +39,7 @@ export const metadata: Metadata = {
     siteName: "Mufti Audio Lectures",
     images: [
       {
-        url: "/images/og-banner.jpg",
+        url: "/images/logoImage.png",
         width: 1200,
         height: 630,
         alt: "Mufti Audio Lectures Banner",
@@ -66,7 +64,6 @@ export const metadata: Metadata = {
     "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no",
 };
 
-// Root Layout
 export default function RootLayout({
   children,
 }: Readonly<{

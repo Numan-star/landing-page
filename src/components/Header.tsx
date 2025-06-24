@@ -4,60 +4,64 @@ import Image from "next/image";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const imageUrl = "https://randomuser.me/api/portraits/men/75.jpg";
 
-  // Prevent background scroll when menu is open
   if (typeof window !== "undefined") {
     document.body.style.overflow = menuOpen ? "hidden" : "";
   }
 
   return (
     <>
-      <header className="w-full flex items-center justify-between px-4 md:px-10 py-4 bg-transparent">
-        <div className="flex items-center gap-3">
+      <header className="w-full flex items-start justify-between px-4 md:px-10 py-4 bg-transparent">
+        <div className="flex items-start gap-3">
           <div>
             <Image
-              src="/images/logo1.jpg"
+              src="/images/logoImage.png"
               alt="Logo"
               width={100}
               height={100}
-              className="h-28 rounded-full"
+              className="rounded-full"
             />
           </div>
           <div>
-            <div className="text-sm font-arabic"> خانقةاللّٰہِ</div>
-            <div className="font-bold text-lg tracking-wide text-orange-400">
+            <div className="text-xl font-arabic"> خانقةاللّٰہِ</div>
+            <div className="font-bold text-lg tracking-wide text-white">
               KHANQATULLAH
             </div>
           </div>
         </div>
         <div className="flex items-center gap-10">
           <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
-            <a href="#" className="hover:text-orange-400 transition">
+            <a href="#" className="hover:text-gray-400 transition">
               Lectures
             </a>
-            <a href="#" className="hover:text-orange-400 transition">
+            <a href="#" className="hover:text-gray-400 transition">
               Wazaif
             </a>
-            <a href="#" className="hover:text-orange-400 transition">
+            <a href="#" className="hover:text-gray-400 transition">
               Resources
             </a>
             <a
               href="#"
-              className="hover:text-orange-400 transition flex items-center gap-1"
+              className="hover:text-gray-400 transition flex items-center gap-1"
             >
-              <span className="flex items-center justify-center bg-red-600 text-white text-[7px] font-bold animate-pulse rounded-full w-6 h-6">
-                LIVE
+              <span className="animate-pulse">
+                <Image
+                  src="/images/liveImage.png"
+                  alt="Logo"
+                  width={100}
+                  height={100}
+                  className="h-10 w-10"
+                />
               </span>
               <span>Streaming</span>
             </a>
           </nav>
           <div className="hidden md:flex items-center gap-4">
             <Image
-              src={imageUrl || "/user.jpg"}
+              src="/images/user.jpeg"
               alt="User"
-              width={36}
-              height={36}
+              width={100}
+              height={100}
               className="h-10 w-10 rounded-full  object-cover"
             />
           </div>
@@ -85,78 +89,77 @@ export default function Header() {
         </button>
       </header>
       <div
-        className={`fixed inset-0 w-screen h-screen z-[9999] bg-black flex flex-col items-center transition-all duration-500 ${
+        className={`fixed inset-0 w-screen h-screen z-[9999] bg-black/95 flex flex-col items-center transition-all duration-500 ${
           menuOpen
             ? "opacity-100 pointer-events-auto scale-100"
             : "opacity-0 pointer-events-none scale-105"
         }`}
         style={{ transitionProperty: "opacity, transform" }}
       >
-        <div className="absolute top-8 left-2/5 -translate-x-1/2 flex items-center gap-3">
-          <Image
-            src="/images/logo.png"
-            alt="Logo"
-            width={40}
-            height={40}
-            className="h-20 w-30"
-          />
+        <div className="w-full flex justify-between items-center px-5 py-3">
           <div>
-            <div className="text-sm font-arabic"> خانقةاللّٰہِ</div>
-            <div className="font-bold text-lg tracking-wide text-orange-400">
-              KHANQATULLAH
-            </div>
+            <Image
+              src="/images/footerLogo.png"
+              alt="Logo"
+              width={100}
+              height={100}
+              className=" w-56 h-36"
+            />
+          </div>
+          <div>
+            <button
+              className="absolute top-6 right-6 text-white"
+              onClick={() => setMenuOpen(false)}
+              aria-label="Close menu"
+            >
+              <svg
+                width="32"
+                height="32"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M6 18L18 6M6 6l12 12"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </button>
           </div>
         </div>
-        <button
-          className="absolute top-6 right-6 text-white"
-          onClick={() => setMenuOpen(false)}
-          aria-label="Close menu"
-        >
-          <svg
-            width="32"
-            height="32"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M6 18L18 6M6 6l12 12"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </button>
+
         <nav
-          className={`flex flex-col gap-8 text-xl font-semibold mt-32 transform transition-all duration-500 ${
+          className={`flex flex-col gap-8 text-xl font-semibold mt-5 transform transition-all duration-500 ${
             menuOpen ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
           }`}
         >
           <a
             href="#"
             onClick={() => setMenuOpen(false)}
-            className="hover:text-orange-400 transition"
+            className="hover:text-gray-400 transition"
           >
             Lectures
           </a>
           <a
             href="#"
             onClick={() => setMenuOpen(false)}
-            className="hover:text-orange-400 transition"
+            className="hover:text-gray-400 transition"
           >
             Wazaif
           </a>
           <a
             href="#"
             onClick={() => setMenuOpen(false)}
-            className="hover:text-orange-400 transition"
+            className="hover:text-gray-400 transition"
           >
             Resources
           </a>
           <a
             href="#"
             onClick={() => setMenuOpen(false)}
-            className="hover:text-orange-400 transition"
+            className="hover:text-gray-400 transition"
           >
             Streaming
           </a>
@@ -166,15 +169,21 @@ export default function Header() {
             menuOpen ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
           }`}
         >
-          <span className="flex items-center justify-center bg-red-600 text-white text-[7px] font-bold animate-pulse rounded-full w-5.5 h-5.5">
-            LIVE
+          <span className="animate-pulse">
+            <Image
+              src="/images/liveImage.png"
+              alt="Logo"
+              width={100}
+              height={100}
+              className="h-10 w-10"
+            />
           </span>
           <Image
-            src={imageUrl || "/user.jpg"}
+            src="/images/user.jpeg"
             alt="User"
-            width={56}
-            height={56}
-            className="h-10 w-10 rounded-full  object-cover"
+            width={100}
+            height={100}
+            className="h-10 w-10 rounded-full object-cover"
           />
         </div>
       </div>

@@ -54,14 +54,13 @@ export default function AudioLectures() {
       </div>
 
       <div className="flex flex-col lg:flex-row gap-8 items-start">
-        {/* Featured Audio Card */}
         <div className="bg-gray-50 p-4 rounded-2xl shadow w-full lg:w-1/2 flex flex-col sm:flex-row gap-4 items-center">
           <div className="bg-gray-200 p-4 sm:p-5 flex flex-col items-center gap-3 rounded-2xl w-full sm:w-auto">
             <div className="text-lg sm:text-xl font-arabic text-gray-600 text-center">
               حكمة القرآن الكريم
             </div>
             <Image
-              src="/images/quran1.jpg"
+              src="/images/quranImage.png"
               alt="Quran"
               width={200}
               height={210}
@@ -102,7 +101,6 @@ export default function AudioLectures() {
           </div>
         </div>
 
-        {/* Lecture List */}
         <div className="space-y-6 w-full lg:w-1/2">
           {lectures.map((lec) => (
             <div key={lec.number} className="flex gap-3 sm:gap-4 items-center">
