@@ -63,7 +63,7 @@ export default function AudioLectures() {
             className="z-0"
           />
 
-          <div className="absolute inset-0 bg-black/10 z-10 flex flex-col justify-end p-5 text-white items-center">
+          <div className="absolute inset-0 bg-black/10 flex flex-col justify-end p-5 text-white items-center">
             <div className="w-full">
               <div className="text-lg sm:text-xl font-semibold mb-2">
                 The Quran from a Literary Practice

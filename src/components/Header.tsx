@@ -1,29 +1,44 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [showLecturesDropdown, setShowLecturesDropdown] = useState(false);
   const [showResourcesDropdown, setShowResourcesDropdown] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
-  if (typeof window !== "undefined") {
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
-  }
+  }, [menuOpen]);
 
   return (
     <>
-      <header className="w-full flex items-start justify-between px-4 md:px-10 py-4 bg-transparent relative z-50">
+      <header
+        className={`fixed top-0  w-full flex items-start justify-between px-4 md:px-10 py-4 z-50 transition-all duration-300 ${
+          scrolled
+            ? "bg-black/70 shadow-lg backdrop-blur-md h-15 md:h-20 z-50"
+            : "bg-transparent"
+        }`}
+      >
         {/* Logo */}
-        <div className="flex items-start gap-3">
+        <div className="flex items-start gap-3 z-50">
           <Image
             src="/images/logoImage.png"
             alt="Logo"
             width={100}
             height={100}
-            className="md:h-32 md:w-20 h-20 w-14 rounded-full"
+            className="md:h-32 md:w-20 h-20 w-14 rounded-full z-50"
           />
-          <div>
+          <div className="z-50">
             <div className="text-xs md:text-lg font-arabic"> خانقةاللّٰہِ</div>
             <div className="font-bold text-sm md:text-xl tracking-wide text-white">
               KHANQATULLAH
@@ -32,7 +47,7 @@ export default function Header() {
         </div>
 
         {/* Desktop Navigation */}
-        <div className="flex items-center gap-10">
+        <div className="flex items-center gap-10 z-50">
           <nav className="hidden md:flex items-center gap-8 text-sm font-medium relative">
             {/* Lectures */}
             <div className="relative">

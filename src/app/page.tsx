@@ -9,7 +9,7 @@ export default function HomePage() {
   return (
     <div className="text-white min-h-screen flex flex-col">
       <div
-        className="relative bg-cover bg-center min-h-[60vh] md:min-h-[100vh]"
+        className="relative bg-cover bg-center pt-[100px] min-h-[60vh] md:min-h-[100vh]"
         style={{ backgroundImage: "url('/images/bgMainImage.png')" }}
       >
         <div className="absolute inset-0 bg-black/70 z-[-1]" />
