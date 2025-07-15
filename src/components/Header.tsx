@@ -23,11 +23,9 @@ export default function Header() {
   return (
     <>
       <header
-        className={`fixed top-0  w-full flex items-start justify-between px-4 md:px-10 py-4 z-50 transition-all duration-300 ${
-          scrolled
-            ? "bg-black/70 shadow-lg backdrop-blur-md h-15 md:h-20 z-50"
-            : "bg-transparent"
-        }`}
+        className={`fixed top-0 w-full flex items-start justify-between px-4 md:px-10 py-4 z-50 transition-all duration-300 ${
+          scrolled ? "bg-black/70 shadow-lg backdrop-blur-md" : "bg-transparent"
+        } h-15 md:h-20`}
       >
         {/* Logo */}
         <div className="flex items-start gap-3 z-50">
