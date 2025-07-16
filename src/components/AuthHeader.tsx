@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useRouter, usePathname } from "next/navigation";
 
 export default function AuthHeader() {
@@ -12,26 +13,25 @@ export default function AuthHeader() {
 
   return (
     <header className="fixed top-0 w-full flex items-start justify-between px-2 md:px-10 py-4 z-50 transition-all duration-300 h-17 md:h-20 bg-black shadow-lg backdrop-blur-md">
-      {/* Left - Logo */}
-      <div className="flex items-start gap-3 z-50">
-        <Image
-          src="/images/logoImage.png"
-          alt="Logo"
-          width={100}
-          height={100}
-          className="md:h-32 md:w-20 h-24 w-14 rounded-full z-50"
-        />
-        <div className="z-50">
-          <div className="text-xs md:text-lg font-arabic"> خانقةاللّٰہِ</div>
-          <div className="font-bold text-sm md:text-xl tracking-wide text-white">
-            KHANQATULLAH
+      <Link href="/">
+        <div className="flex items-start gap-3 z-50">
+          <Image
+            src="/images/logoImage.png"
+            alt="Logo"
+            width={100}
+            height={100}
+            className="md:h-32 md:w-20 h-24 w-14 rounded-full z-50"
+          />
+          <div className="z-50">
+            <div className="text-xs md:text-lg font-arabic"> خانقةاللّٰہِ</div>
+            <div className="font-bold text-sm md:text-xl tracking-wide text-white">
+              KHANQATULLAH
+            </div>
           </div>
         </div>
-      </div>
+      </Link>
 
-      {/* Right - Toggle Buttons */}
       <div className="flex items-center md:mt-1 space-x-5">
-        {/* Toggle Text */}
         {isLogin && (
           <span className="text-base text-gray-300 hidden md:inline">
             Toggle to sign up
@@ -43,9 +43,7 @@ export default function AuthHeader() {
           </span>
         )}
 
-        {/* Button Group */}
         <div className="relative flex rounded-md overflow-hidden transition-all duration-300 ease-in-out">
-          {/* Sign Up Button */}
           <button
             onClick={() => router.push("/signup")}
             className={`px-3 md:px-8 py-2 cursor-pointer text-xs md:text-base font-semibold transition-all duration-300 ease-in-out ${
@@ -57,7 +55,6 @@ export default function AuthHeader() {
             Sign Up
           </button>
 
-          {/* Sign In Button */}
           <button
             onClick={() => router.push("/login")}
             className={`px-3 md:px-8 py-2 cursor-pointer text-xs md:text-base font-semibold transition-all duration-300 ease-in-out ${

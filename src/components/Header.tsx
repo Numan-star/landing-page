@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -143,7 +144,7 @@ export default function Header() {
           </nav>
 
           {/* User Avatar */}
-          <div className="hidden md:flex items-center gap-4">
+          {/* <div className="hidden md:flex items-center gap-4">
             <Image
               src="/images/user.jpeg"
               alt="User"
@@ -151,6 +152,21 @@ export default function Header() {
               height={100}
               className="h-10 w-10 rounded-full object-cover"
             />
+          </div> */}
+
+          <div className="relative hidden md:flex rounded-md gap-1  transition-all duration-300 ease-in-out">
+            <Link
+              href="/signup"
+              className=" text-sm hover:border-[#f27f22] border border-white text-white rounded-md hover:bg-[#f27f22] hover:text-black py-2 px-4"
+            >
+              Sign Up
+            </Link>
+            <Link
+              href="/login"
+              className=" text-sm hover:border-[#f27f22] border border-white text-white rounded-md hover:bg-[#f27f22] hover:text-black py-2 px-4"
+            >
+              Sign In
+            </Link>
           </div>
         </div>
 
@@ -298,7 +314,7 @@ export default function Header() {
         </nav>
 
         {/* Mobile Footer Icons */}
-        <div className="mt-10 flex justify-center items-center gap-3">
+        {/* <div className="mt-10 flex justify-center items-center gap-3">
           <span className="animate-pulse">
             <Image
               src="/images/liveImage.png"
@@ -315,6 +331,23 @@ export default function Header() {
             height={100}
             className="h-10 w-10 rounded-full object-cover"
           />
+        </div> */}
+
+        <div className="mt-5">
+          <div className="relative flex md:hidden rounded-md gap-1  transition-all duration-300 ease-in-out">
+            <Link
+              href="/signup"
+              className=" text-sm hover:border-[#f27f22] border border-white text-white rounded-md hover:bg-[#f27f22] hover:text-black py-2 px-4"
+            >
+              Sign Up
+            </Link>
+            <Link
+              href="/login"
+              className=" text-sm hover:border-[#f27f22] border border-white text-white rounded-md hover:bg-[#f27f22] hover:text-black py-2 px-4"
+            >
+              Sign In
+            </Link>
+          </div>
         </div>
       </div>
     </>
