@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import { FaGoogle, FaFacebookF, FaApple, FaLinkedinIn } from "react-icons/fa";
 import { IoEyeOutline, IoEyeOffOutline } from "react-icons/io5";
 
@@ -15,18 +14,9 @@ export default function LoginPage() {
     <>
       <AuthHeader />
       <div className="min-h-screen flex flex-col md:flex-row">
-        <div className="w-full md:w-4/7 2xl:w-1/2 bg-black">
-          <Image
-            src="/images/kalma.png"
-            alt="Calligraphy"
-            width={100}
-            height={100}
-            className="object-cover w-full"
-          />
-        </div>
+        <div className="w-full md:w-4/7 2xl:w-1/2 bg-[url('/images/scholarName.png')] bg-cover bg-no-repeat bg-center sm:min-h-screen h-[500px] sm:h-[800px]"></div>
 
-        {/* Right - Login Form */}
-        <div className="w-full md:w-3/7 2xl:w-1/2 flex items-center justify-center px-6 py-10 bg-white">
+        <div className="w-full md:w-3/7 2xl:w-1/2 flex items-center justify-center px-6 py-10 bg-white sm:min-h-screen h-[500px] sm:h-[800px]">
           <div className="md:max-w-sm 2xl:max-w-xl w-full space-y-6">
             <h2 className="text-center text-gray-600 font-medium mb-10">
               Already have an account? Sign In!{" "}
@@ -39,7 +29,6 @@ export default function LoginPage() {
                 className="w-full text-[#545454] bg-[#e8e8e8] px-4 py-3 border-0 rounded-md focus:outline-none"
               />
 
-              {/* Password Field */}
               <div className="relative">
                 <input
                   type={showPassword ? "text" : "password"}
