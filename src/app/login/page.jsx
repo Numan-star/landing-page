@@ -14,7 +14,7 @@ export default function LoginPage() {
     <>
       <AuthHeader />
       <div className="min-h-screen flex flex-col md:flex-row">
-        <div className="w-full md:w-4/7 2xl:w-1/2 bg-[url('/images/scholarName.png')] bg-cover bg-no-repeat bg-center sm:min-h-screen h-[600px] sm:h-[800px]"></div>
+        <div className="w-full md:w-4/7 2xl:w-1/2 bg-[url('/images/scholarName.png')] bg-cover bg-no-repeat bg-center sm:min-h-screen h-[550px] sm:h-[800px]"></div>
 
         <div className="w-full md:w-3/7 2xl:w-1/2 flex items-center justify-center px-6 py-10 bg-white sm:min-h-screen h-[500px] sm:h-[800px]">
           <div className="md:max-w-sm 2xl:max-w-xl w-full space-y-6">
