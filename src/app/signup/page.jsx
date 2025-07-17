@@ -16,7 +16,7 @@ export default function SignUpPage() {
       <AuthHeader />
       <div className="min-h-screen flex flex-col md:flex-row">
         {/* <div className="w-full md:w-4/7 2xl:w-1/2 bg-black"> */}
-        <div className="w-full md:w-4/7 2xl:w-1/2 bg-[url('/images/scholarName.png')] bg-cover bg-no-repeat bg-center sm:min-h-screen h-[500px] sm:h-[800px]">
+        <div className="w-full md:w-4/7 2xl:w-1/2 bg-[url('/images/scholarName.png')] bg-cover bg-no-repeat bg-center sm:min-h-screen h-[600px] sm:h-[800px]">
           {/* <Image
             src="/images/scholarName.png"
             alt="Calligraphy"
@@ -103,12 +103,12 @@ export default function SignUpPage() {
                 <button className="p-3 border-none rounded-lg bg-[#d9d9d9]">
                   <FaFacebookF fill="#787878" size={18} />
                 </button>
-                <button className="p-3 border-none rounded-lg bg-[#d9d9d9]">
+                {/* <button className="p-3 border-none rounded-lg bg-[#d9d9d9]">
                   <FaApple fill="#787878" size={18} />
                 </button>
                 <button className="p-3 border-none rounded-lg bg-[#d9d9d9]">
                   <FaLinkedinIn fill="#787878" size={18} />
-                </button>
+                </button> */}
               </span>
             </div>
           </div>
