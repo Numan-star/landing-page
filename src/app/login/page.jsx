@@ -24,7 +24,7 @@ export default function LoginPage() {
         <div className="w-full md:w-4/7 2xl:w-1/2 bg-[url('/images/scholarName.png')] bg-cover bg-no-repeat bg-center sm:min-h-screen h-screen sm:h-[800px]"></div>
 
         <MobileFormWrapper>
-          <div className="w-full md:w-3/7 2xl:w-1/2 flex items-center justify-center px-10 sm:px-6 py-10 bg-white sm:min-h-screen h-[600px] sm:h-[800px] rounded-l-4xl sm:rounded-l-none">
+          <div className="w-full md:w-3/7 2xl:w-1/2 flex items-center justify-center px-10 sm:px-6 py-10 bg-white sm:min-h-screen h-[520px] sm:h-[800px] rounded-l-4xl sm:rounded-l-none">
             <div className="md:max-w-sm 2xl:max-w-xl w-full space-y-6">
               <h2 className="text-center text-gray-600 font-medium mb-10">
                 Already have an account? Sign In!{" "}
