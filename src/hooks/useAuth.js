@@ -1,11 +1,13 @@
+"use client";
+
 import { useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/navigation";
 import { AuthContext } from "../context/AuthContext";
 import { authService } from "../services/authService";
 
 export const useAuth = () => {
   const { user, setUser } = useContext(AuthContext);
-  const navigate = useNavigate();
+  const router = useRouter();
 
   if (typeof setUser === "undefined") {
     throw new Error("useAuth must be used within an AuthProvider");
@@ -38,7 +40,7 @@ export const useAuth = () => {
   };
 
   const forgotPassword = async (userData) => {
-    const result = await authService.fogotPassword(userData);
+    const result = await authService.forgotPassword(userData);
     return result;
   };
 
@@ -50,7 +52,7 @@ export const useAuth = () => {
   const logout = () => {
     authService.logout();
     setUser(null);
-    navigate("/login");
+    router.push("/login");
   };
 
   return {

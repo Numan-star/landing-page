@@ -1,19 +1,43 @@
-import React, { useState } from "react";
-import { GoogleLogin } from "@react-oauth/google";
-import { useAuth } from "../../hooks/useAuth";
+import React, { useEffect, useState } from "react";
+import { FaGoogle } from "react-icons/fa";
+import { useAuth } from "../hooks/useAuth";
 import "./logingoogle.css";
 
 const LoginGoogle = ({ onAuthComplete }) => {
   const { googleLogin } = useAuth();
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const [client, setClient] = useState(null);
 
-  const handleGoogleSuccess = async (credentialResponse) => {
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://accounts.google.com/gsi/client";
+    script.async = true;
+    script.defer = true;
+    script.onload = () => {
+      const tokenClient = window.google.accounts.oauth2.initTokenClient({
+        client_id: "YOUR_GOOGLE_CLIENT_ID",
+        scope: "email profile openid",
+        callback: handleGoogleSuccess,
+      });
+      setClient(tokenClient);
+    };
+    document.body.appendChild(script);
+  }, []);
+
+  const handleGoogleSuccess = async (tokenResponse) => {
+    if (!tokenResponse || !tokenResponse.access_token) {
+      const errorMessage = "Google authentication failed";
+      setError(errorMessage);
+      onAuthComplete({ success: false, error: errorMessage });
+      return;
+    }
+
     setError("");
     setLoading(true);
 
     try {
-      const data = await googleLogin(credentialResponse.credential);
+      const data = await googleLogin(tokenResponse.access_token);
 
       if (data.success) {
         localStorage.setItem("token", data.token);
@@ -42,23 +66,24 @@ const LoginGoogle = ({ onAuthComplete }) => {
     }
   };
 
+  const handleClick = () => {
+    if (client) {
+      client.requestAccessToken();
+    } else {
+      const errorMessage = "Google client not initialized";
+      setError(errorMessage);
+      onAuthComplete({ success: false, error: errorMessage });
+    }
+  };
+
   return (
-    <div className="w-full flex justify-center">
-      <GoogleLogin
-        onSuccess={handleGoogleSuccess}
-        onError={() => {
-          const errorMessage = "Google authentication failed";
-          setError(errorMessage);
-          onAuthComplete({ success: false, error: errorMessage });
-        }}
-        disabled={loading}
-        shape="pill" // Options: 'rectangular' or 'pill'
-        theme="outline" // Options: 'outline' or 'filled_blue' or 'filled_black'
-        size="large" // Options: 'large' or 'medium' or 'small'
-        text="continue_with" // Options: 'signin_with' or 'signup_with' or 'continue_with'
-        width="100%" // Set custom width in pixels
-      />
-    </div>
+    <button
+      className="p-3 border-none rounded-lg bg-[#d9d9d9] cursor-pointer"
+      onClick={handleClick}
+      disabled={loading}
+    >
+      <FaGoogle fill="#787878" size={18} />
+    </button>
   );
 };
 

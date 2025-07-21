@@ -4,6 +4,8 @@ import MobileFormWrapper from "../../components/MobileFormWrapper";
 import { useState, useEffect } from "react";
 import { FaGoogle, FaFacebookF } from "react-icons/fa";
 import { IoEyeOutline, IoEyeOffOutline } from "react-icons/io5";
+import LoginFacebook from "../../loginFacebook/LoginFacebook";
+import LoginGoogle from "../../loginGoogle/LoginGoogle";
 
 import AuthHeader from "../../components/AuthHeader";
 import Footer from "../../components/Footer";
@@ -96,12 +98,9 @@ export default function SignUpPage() {
                   or continue with
                 </span>
                 <span className="flex justify-end gap-4 w-5/6">
-                  <button className="p-3 border-none rounded-lg bg-[#d9d9d9]">
-                    <FaGoogle fill="#787878" size={18} />
-                  </button>
-                  <button className="p-3 border-none rounded-lg bg-[#d9d9d9]">
-                    <FaFacebookF fill="#787878" size={18} />
-                  </button>
+                  <LoginGoogle />
+
+                  <LoginFacebook />
                 </span>
               </div>
             </div>

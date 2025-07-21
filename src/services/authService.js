@@ -1,12 +1,12 @@
 const API_URL = "http://localhost:8000/api/auth";
 
 export const authService = {
-  async login(crdentials) {
+  async login(credentials) {
     try {
       const response = await fetch(`${API_URL}/login`, {
         method: "POST",
         headers: { "Content-type": "application/json" },
-        body: JSON.stringify(crdentials),
+        body: JSON.stringify(credentials),
       });
 
       const data = await response.json();
@@ -16,10 +16,11 @@ export const authService = {
         localStorage.setItem("user", JSON.stringify(data.user));
       }
       return data;
-    } catch (error) {
+    } catch {
       return { success: false, message: "Login failed" };
     }
   },
+
   async googleLogin(token) {
     try {
       const response = await fetch(`${API_URL}/google`, {
@@ -34,7 +35,7 @@ export const authService = {
         localStorage.setItem("user", JSON.stringify(data.user));
       }
       return data;
-    } catch (error) {
+    } catch {
       return { success: false, message: "Google login failed" };
     }
   },
@@ -53,7 +54,7 @@ export const authService = {
         localStorage.setItem("user", JSON.stringify(data.user));
       }
       return data;
-    } catch (error) {
+    } catch {
       return { success: false, message: "Registration failed" };
     }
   },
@@ -69,7 +70,7 @@ export const authService = {
       const data = await response.json();
 
       return data;
-    } catch (error) {
+    } catch {
       return { success: false, message: "Error processing request" };
     }
   },
@@ -85,7 +86,7 @@ export const authService = {
       const data = await response.json();
 
       return data;
-    } catch (error) {
+    } catch {
       return { success: false, message: "Error processing request" };
     }
   },
