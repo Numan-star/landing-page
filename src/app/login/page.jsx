@@ -3,8 +3,8 @@
 import MobileFormWrapper from "../../components/MobileFormWrapper";
 import { useState, useEffect } from "react";
 import { IoEyeOutline, IoEyeOffOutline } from "react-icons/io5";
-import LoginFacebook from "../../loginFacebook/LoginFacebook";
-import LoginGoogle from "../../loginGoogle/LoginGoogle";
+import LoginFacebook from "../../loginfacebook/LoginFacebook";
+import LoginGoogle from "../../logingoogle/LoginGoogle";
 import AuthHeader from "../../components/AuthHeader";
 import Footer from "../../components/Footer";
 
