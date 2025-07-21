@@ -33,7 +33,6 @@ export default function MobileFormWrapper({ children }) {
   }, [isMobile, pathname]);
 
   if (!isMobile) return <>{children}</>;
-
   return (
     <div
       className={`fixed top-30 rounded-tl-4xl sm:rounded-0 right-0 left-[105%] w-full h-70 bg-white z-40 transition-transform duration-500 ease-in-out transform ${
