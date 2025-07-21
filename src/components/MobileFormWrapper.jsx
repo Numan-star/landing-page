@@ -18,20 +18,19 @@ export default function MobileFormWrapper({ children }) {
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
-  // useEffect(() => {
-  //   const shouldShow = localStorage.getItem("showMobileForm") === "true";
-  //   setShowForm(shouldShow);
-  // }, [pathname]);
-
   useEffect(() => {
-    const shouldShow = localStorage.getItem("showMobileForm") === "true";
-    setShowForm(shouldShow);
-  }, []);
+    if (!isMobile) return;
 
-  // const handleClose = () => {
-  //   setShowForm(false);
-  //   localStorage.removeItem("showMobileForm");
-  // };
+    const flag = localStorage.getItem("showMobileForm");
+
+    if (flag === "true") {
+      setShowForm(false);
+    } else {
+      setShowForm(true);
+    }
+
+    localStorage.removeItem("showMobileForm");
+  }, [isMobile, pathname]);
 
   if (!isMobile) return <>{children}</>;
 
@@ -41,15 +40,6 @@ export default function MobileFormWrapper({ children }) {
         showForm ? "translate-x-0" : "-translate-x-full"
       }`}
     >
-      {/* Close Button - Top Left */}
-      {/* <button
-        onClick={handleClose}
-        className="absolute top-4 left-4 text-gray-600 text-2xl z-50"
-        aria-label="Close"
-      >
-        &times;
-      </button> */}
-
       {children}
     </div>
   );

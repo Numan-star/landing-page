@@ -11,11 +11,11 @@ import Footer from "../../components/Footer";
 export default function LoginPage() {
   const [showPassword, setShowPassword] = useState(false);
 
-  useEffect(() => {
-    return () => {
-      localStorage.removeItem("showMobileForm");
-    };
-  }, []);
+  // useEffect(() => {
+  //   return () => {
+  //     localStorage.removeItem("showMobileForm");
+  //   };
+  // }, []);
 
   return (
     <>

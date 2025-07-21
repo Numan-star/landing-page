@@ -13,11 +13,11 @@ export default function SignUpPage() {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
-  useEffect(() => {
-    return () => {
-      localStorage.removeItem("showMobileForm");
-    };
-  }, []);
+  // useEffect(() => {
+  //   return () => {
+  //     localStorage.removeItem("showMobileForm");
+  //   };
+  // }, []);
 
   return (
     <>

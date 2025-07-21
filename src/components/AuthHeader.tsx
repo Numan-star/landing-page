@@ -12,7 +12,7 @@ export default function AuthHeader() {
   const isSignup = pathname === "/signup";
 
   const handleNavigation = (path: string) => {
-    if (typeof window !== "undefined" && window.innerWidth < 768) {
+    if (window.innerWidth < 768) {
       localStorage.setItem("showMobileForm", "true");
     }
     router.push(path);
